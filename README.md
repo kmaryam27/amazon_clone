@@ -83,7 +83,7 @@ Automated test is not implement here. Future improvment
 
 ## Deployment
 
-Use Heroku to deploy, https://amazon--hubblepuff.herokuapp.com/
+Use Heroku to deploy, https://gt-amazon-clone.herokuapp.com/
 
 ## Built the following major node packages,
 
