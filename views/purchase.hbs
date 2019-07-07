@@ -1,0 +1,64 @@
+<head>
+    <base href="/">
+</head>
+
+<body>
+    <div class='purchaseContainer'>
+        <div class='productImg purDesktop purCenter'>
+            <img src='{{product.itemImgPath}}'/>
+        </div>
+        <div class='productInfoBox'>
+            <div class='productInfo'>
+                <header class='purchaseHeader'>{{product.itemName}}
+                    <h6 class='purchaseH6'>by {{product.itemSeller}}</h6>
+                <hr/>
+                </header>
+                
+                <div class='productImg purMobile purCenter'>
+                    <img src='{{product.itemImgPath}}'/>
+                </div>
+                <div>
+                    <h5 class='purchaseH5'>Price:
+                        <span style='font-size:20px; color:#D63D28;'>$ {{product.itemPrice}}</span>
+                    </h5>
+                </div>
+                {{#if product.itemCount}}
+                <div>
+                    <h4 class='purchaseH4' style='color:green;'>In Stock</h4>
+                </div>
+                {{/if}}
+                {{#unless product.itemCount}}
+                <div>
+                    <h4 class='purchaseH4' style='color:red;'>Not in Stock</h4>
+                </div>
+                {{/unless}}
+                <div>
+                    <h4 class='purchaseH4'>About the product</h4>
+                    <div class='purList' style="list-style-type:disc">
+                        {{product.itemDescription}}
+
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class='purchaseSection'>
+            <div class='purchaseBox'>
+                <div class='purBoxFit'>
+                    <span class='purchaseQty'>Qty
+                        <select id='purSelect'>
+                            <option value='1'>1</option>
+                            <option value='2'>2</option>
+                            <option value='3'>3</option>
+                            <option value='4'>4</option>
+                            <option value='5'>5</option>
+                            <option value='6'>6</option>
+                        </select>
+                        <a href='/shoppingCart' >cart:</a><span id='cartQty' >0</span>
+                    </span>
+                    <button id='incQtyBtn' type='button' data-id='{{product._id}}'>Add to Cart</button>
+                </div>
+            </div>
+        </div>
+        <script src='javascripts/purchase.js'></script>
+    </div>
+</body>

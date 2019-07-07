@@ -1,0 +1,51 @@
+{{!-- User review page --}}
+<div class="row mt-5">
+  <div class="col-sm-3 col-md-3 col-lg-3 col-xl-3 align-items-center " style="border:1px solid white">
+    <img class="align-self-center item-image" src={{inventory.itemImgPath}}>
+  </div>
+  <div class="col-sm-3 col-md-3 col-lg-3 col-xl-3" style="border:1px solid white">
+    <ul class="list-group">
+      <li class="list-unstyled">Name: {{inventory.itemName}}</li>
+      <li class="list-unstyled">Department: {{inventory.itemDepartment}}</li>
+      <li class="list-unstyled">Description: {{inventory.itemDescription}}</li>
+      <li class="list-unstyled">Seller: {{inventory.itemSeller}}</li>
+      <li class="list-unstyled">Price: ${{inventory.itemPrice}}</li>
+    </ul>
+  </div>
+  <div class="col-sm-6 col-md-6 col-lg-6 col-xl-6" style="border:1px solid white">
+    <form action="/review/update/{{inventory.id}}?_method=PUT&userRate=userRate" method="post" class="form-group">
+      <label for="formControlSelect1">How did you like it?</label>
+      <select class="form-control" id="qtyControlSelect1" name="userRate">
+        <option value="1">1</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+        <option value="4">4</option>
+        <option value="5">5</option>
+      </select>
+      <div class="form-group">
+        <label for="reviewFormControlTextarea1">Review</label>
+        <textarea class="form-control" id="reviewFormControlTextarea1" rows="3" name="userReview"></textarea>
+      </div>
+      <br />
+      <button type="submit" class="btn-primary">Submit</button>
+    </form>
+
+  </div>
+  <hr>
+</div>
+<div class="row mt-5">
+  <div class="container">
+    {{#each inventory.itemReview}}
+    <div class="card p-3" style="width: 30rem">
+      <ul class="list-group list-group-flush">
+        <li class="list-group-item"> Reviewed by: <strong>{{this.reviewer}}</strong></li>
+        <li class="list-group-item">Rate: <strong>{{this.rate}}</strong></li>
+        <li class="list-group-item">Comment: <strong>{{this.content}}</strong></li>
+        <li class="list-group-item">{{this.date}}</li>
+      </ul>
+    </div>
+    <br />
+    <hr>
+    {{/each}}
+  </div>
+</div>

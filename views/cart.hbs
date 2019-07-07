@@ -1,0 +1,90 @@
+<body>
+        <form>
+            <div class='cartContainer'>
+                <div class='cartDisplay'>
+                    <div id='cartTop'>
+                        <header class='cartHeader cartTopBox1'>Shopping Cart</header>
+                        <div id='chekoutShow' class='cartMobile'>
+                            <div class='cartHeader'>
+                                Subtotal: $
+                                <span class='cartSubtotal'></span>
+                            </div>
+                            <button type="submit" id='cartOrderBtn'>Place the order</button>
+                        </div>
+                        <div class='cartBlank cartDesktop'></div>
+                        <h6 class='cartH6 cartTopBox2 cartDesktop'>Price</h6>
+                        <h6 class='cartH6 cartTopBox3 cartDesktop'>Quantity</h6>
+                        
+                    </div>
+                    {{#each inventory}} {{#if this.itemInCart}}
+                    <div id='cartMiddle'>
+                        <div class='cartMiddleBox'>
+                            <div id='cartProductImg'>
+                                <img src='{{this.itemImgPath}}' />
+                            </div>
+
+                            <div id='cartProductInfo'>
+                                <h5 class='cartH5'>{{this.itemName}}</h4>
+                                    <div class='cartH5 cartMobile'>$ {{this.itemPrice}}</div>
+                                    {{#if this.itemCount}}
+                                    <h6 class='cartH6' id='{{this._id}}stock' style='color:green'></h6>
+                                    {{/if}}
+                                    {{#unless this.itemCount}}
+                                    <h6 class='cartH6' id='{{this._id}}stock' style='color:red'></h6>
+                                    {{/unless}}
+                                    
+                            </div>
+
+                            <div id='cartProductPrice' class='cartDesktop'>
+                                <h5 class='cartH5 cartDesktop'>{{this.itemPrice}}</h5>
+                            </div>
+
+                            <div id='cartProductQty'>
+                                
+                                <h5><span class='cartMobile'>Qty:</span><span class='cartH5 cartQty' id='{{this._id}}' data-id=`{{this._id}}`></span></h5>
+
+                                <span class='cartQtyChange'>
+                                    <button id='cartDecBtn' type='submit' data-id='{{this._id}}'><i class="fas fa-minus"></i></button>
+                                    <select id='cartSelect{{this._id}}'>
+                                        <option value='1'>1</option>
+                                        <option value='2'>2</option>
+                                        <option value='3'>3</option>
+                                        <option value='4'>4</option>
+                                        <option value='5'>5</option>
+                                        <option value='6'>6</option>
+                                    </select>
+                                    <button id='cartIncBtn' type='submit' data-id='{{this._id}}'><i class="fas fa-plus"></i></button>
+
+                                </span>
+                                
+                            </div>
+
+                        </div>
+                    </div>
+
+                    {{/if}} {{/each}}
+                    <div id='cartBottom' class='cartDesktop'>
+                        <div class='cartHeader cartDesktop'>
+                            Subtotal: $
+                            <span class='cartSubtotal'></span>
+                        </div>
+                    </div>
+                </div>
+                <div class='cartCheckout cartDesktop'>
+                    <div id='chekoutShow' >
+                        <div class='cartHeader'>
+                            Subtotal: $
+                            <span class='cartSubtotal'></span>
+                        </div>
+
+                        <button type="submit" id='cartOrderBtn'>Place the order</button>
+
+                    </div>
+                    <div class='cartBlank'></div>
+                </div>
+            </div>
+        </form>
+        <script src='javascripts/cart.js'></script>
+
+</body>
+

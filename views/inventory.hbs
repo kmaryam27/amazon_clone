@@ -1,0 +1,37 @@
+<div class="m-4 p-4">
+    <div class=" row w-100" style="box-shadow: 0 8px 15px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);">
+        <div style="overflow-x:auto;">
+            <table class="inventory-seller-table" style="border-collapse: collapse; border-spacing: 0; width: 100%; border: 1px solid #ddd;">
+                <tr class="text-center pl-5">
+                    <th><strong>image</strong></th>
+                    <th><strong>item Id</strong></th>
+                    <th><strong>department</strong></th>
+                    <th><strong>name</strong></th>
+                    <th><strong>About</strong></th>
+                    <th><strong>Price</strong></th>
+                    <th><strong>count</strong></th>
+                    <th><strong></strong></th>
+                </tr>
+                {{#each inventory}}
+                <tr class="font-weight-normal">
+                    <td><img style="max-width: 150px;" src="{{this.itemImgPath}}" /></td>
+                    <td>{{this._id}}</td>
+                    <td>{{this.itemDepartment}}</td>
+                    <td>{{this.itemName}}</td>
+                    <td>{{this.itemDescription}}</td>
+                    <td>{{this.itemPrice}}</td>
+                    <td>{{this.itemCount}}</td>
+                    <td>
+                        <div class="col-sm-4 col-md-3 col-lg-2 col-xl-2">
+                            <form action="/inventories/update/{{this._id}}" method="POST">
+                                <button type="submit" id="buyBtn" class="btn btn-outline-primary ml-5" type="button">edit</button>
+                            </form>
+                        </div>
+                    </td>
+                </tr>
+                {{/each}}
+            </table>
+        </div>
+
+    </div>
+</div>

@@ -1,0 +1,51 @@
+<div class="mb-4 text-center d-flex justify-content-center">
+    <div class="col-md-6 col-md-offset-3">
+        <div style="background-image: linear-gradient(to bottom right,rgb(83, 83, 83), rgb(202, 201, 201), rgb(240, 239, 239)); box-shadow: 0 8px 15px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19); border-radius: 15px"
+            class="panel border rounded-25 mt-5 pl-4 pr-4">
+            {{!-- register --}}
+            <div class="row p-1 panel-heading">
+                <section class="col">
+                    <i class="fas fa-user-plus pl-5  fa-5x col text-muted"></i>
+                    <label class="font-weight-bold col">Register</label>
+                </section>
+                <hr>
+            </div>
+            {{!-- register form --}}
+            <form id="register-form" action="/users/newUser" method="post" role="form">
+                <section class="form-group  mb-4 d-flex">
+                    <i class="fa fa-user icon fa-2x text-muted m-1"></i>
+                    <input type="text" name="username" data-toggle="tooltip" title=" username must start with letters, 5-30 char use: (uppercase, lowecase, numbers, !,@,#,$,-,_)"
+                        id="username" tabindex="1" class="form-control" placeholder="Username" value="">
+                </section>
+                <section class="form-group  mb-4 d-flex">
+                    <i class="fa fa-envelope icon fa-2x text-muted m-1"></i>
+                    <input type="email" name="email" id="email" tabindex="1" class="form-control" placeholder="Email Address" value="">
+                </section>
+                <section class="form-group  mb-4 d-flex">
+                    <i class="fa fa-key icon fa-2x text-muted m-1"></i>
+                    <input type="password" name="password" data-toggle="tooltip" title="must contain at least (1 lowercase, 1 uppercase alphabetical character,1 numeric,and ! @ # $ - _) minimum 8 char or longer!!!"
+                        id="password" tabindex="2" class="form-control" placeholder="Password">
+                </section>
+                <section class="form-group d-flex">
+                    <i class="fa fa-key icon fa-2x text-muted m-1"></i>
+                    <input type="password" id="confirm-password" tabindex="2" class="form-control" placeholder="Confirm Password">
+                </section>
+                <section class="form-group">
+                    <div class="text-center d-flex justify-content-center">
+                        <div class="col-sm-6 col-sm-offset-3">
+                            <button type="submit" id="register-submit" tabindex="4" class="form-control btn btn-secondary">Register
+                                Now
+                            </button>
+                        </div>
+                    </div>
+                </section>
+            </form>
+        </div>
+    </div>
+</div>
+
+{{#if msg}}
+<div class="mt-4 container-fluid alert alert-danger col-lg-4  ml-50">
+    <p><strong>Erorr: </strong>{{msg}}</p>
+</div>
+{{/if}}

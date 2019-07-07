@@ -1,0 +1,165 @@
+{{!--responsive slider --}}
+<span id="main-slider" class="navbar-dark">
+  <section class="navbar-dark">
+    <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
+      <section class="carousel-inner">
+        <span class="carousel-item active">
+          <img class="d-block w-100" src="/images/slideshow/a.jpg" alt="First slide">
+        </span>
+        <span class="carousel-item">
+          <img class="d-block w-100" src="/images/slideshow/F2_W_S_GW_DH_BOOTS_1x._CB484746372_.jpg" alt="Second slide">
+        </span>
+        <span class="carousel-item">
+          <img class="d-block w-100" src="/images/slideshow/gw_desktop_hero_b_1500x300._CB482475283_.jpg" alt="Third slide">
+        </span>
+        <span class="carousel-item">
+          <img class="d-block w-100" src="/images/slideshow/GW_DesktopHero_1500x300._CB484017086_.jpg" alt="Third slide">
+        </span>
+        <span class="carousel-item">
+          <img class="d-block w-100" src="/images/slideshow/VX-2354-FTVDOT-GW-BUND-1500x300-2X._CB482473627_.jpg" alt="Third slide">
+        </span>
+      </section>
+      <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="sr-only">Previous</span>
+      </a>
+      <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="sr-only">Next</span>
+      </a>
+    </div>
+  </section>
+</span>
+
+{{!-- home body --}}
+<section id="homescreen" class="p-4" style="background-color: gainsboro">
+
+  <div class="card-deck">
+    {{!-- user info --}}
+    <section class="card">
+      <div class="card-header">
+        <i class="fas fa-user-circle fa-5x text-muted">
+          {{#if reviewer}}
+          <h5 style="color: black">Hi, {{reviewer}}</h5>
+          {{/if}}
+        </i>
+      </div>
+      <div class="card-body">
+        <a href='/special/{"ref":"Electronics","category":"Chromebook"}'>
+          <img class="mw-100 mh-100" src="/images/home/new.jpg">
+        </a>
+        <p>New Google's Chromebook</p>
+      </div>
+      <div class="card-footer">
+        <a href="/inventory" class="card-text">see all products</a>
+      </div>
+    </section>
+    {{!-- sport --}}
+    <div class="card">
+      <div class="card-header">"Adidas goodmorning"</div>
+      <div class="card-body text-left">
+        <a class="navbar-brand pull-left" href='/special/{"ref":"Clothing","category":""}'>
+          <img class="mw-100 mh-100" src="/images/home/women.jpg">
+        </a>
+        <p>Adidas Sport Category</p>
+      </div>
+      <div class="card-footer">
+        <a href="/inventory" class="card-text">see more</a>
+      </div>
+    </div>
+    {{!-- Electric --}}
+    <div class="card">
+      <div class="card-header">
+        <p class="card-text">New Electronic products of Google</p>
+      </div>
+      <div class="card-body text-left">
+        <a class="navbar-brand pull-left" href='/special/{"ref":"Electronics","category":"Google"}'>
+          <img class="mw-100 mh-100" src="/images/home/electric.jpg">
+        </a>
+        <p>Google Electronic category</p>
+      </div>
+    </div>
+    {{!-- donate + toy --}}
+    <div class="card" style="background-color: gainsboro; border: none">
+      {{!-- donate --}}
+      <div class="card mb-4">
+        <div class="card-body text-center">
+          <div class="text-center" data-a-card-type="basic">
+            <div class="a-cardui-header">
+              <h4 class="a-spacing-mini truncate-1line">Hurricane Michael Relief</h4>
+            </div>
+            <div class="a-cardui-body">
+              <p class="a-size-base a-color-base truncate-2line">Help people affected by Hurricane Michael</p>
+            </div>
+            <div class="a-cardui-footer">
+              <a aria-label="Help people affected by Hurricane Michael" class="a-link-normal truncate-1line" href="https://www.amazon.com/l/17285237011?ref=relief_gw_topper&pf_rd_p=c456071d-3266-476b-b97c-26814dbdaad6&pf_rd_r=ZZQ85DK5J40RJ6MT56M2">Donate
+                now
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+      {{!-- toy --}}
+      <div class="card">
+        <div class="card-body text-left">
+          <a class="navbar-brand pull-left" href='/special/{"ref":"Toy","category":""}'>
+            <img class="mw-100 mh-100" src="/images/home/toy.jpg">
+          </a>
+          <p>toys and more for kids</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  {{!-- second row --}}
+  <div class="card-group ">
+    {{!-- Intoduce Movie --}}
+    <div class="card mt-4 mr-2" style="flex-grow: 2.15; background-color: gainsboro; border: none">
+      <div class="card-block">
+        <a class="card-thumb" href='/special/{"ref":"Movie","category":"Incredibles"}'>
+          <div style="flex-grow: 2.15; background-image: url('/images/home/moviebg.jpg');  height: 400px; min-height: 200px; background-size: cover; background-repeat: no-repeat"></div>
+        </a>
+      </div>
+    </div>
+    {{!-- food --}}
+    <div class="card mr-3 ml-3" style="background-color: gainsboro; border: none">
+      <div class="card-block">
+        <span class="col">
+          <div class="card-thumb" style="background-color: white">
+            <div class="card-header">
+              Deal of the Day
+            </div>
+            <div class="card-body text-center">
+              <a class="navbar-brand pull-left" href='/special/{"ref":"Food","category":"Cheddar"}'>
+                <img class="mw-100 mh-100" src="/images/cheese-bis-1.jpeg">
+              </a>
+              <p>$7.99-$27.99</p>
+            </div>
+            <div class="card-footer text-left">
+              <a href="/inventory" class="card-text">see more</a>
+            </div>
+          </div>
+        </span>
+      </div>
+    </div>
+    {{!-- headphone --}}
+    <div class="card ml-3 mr-2" style="background-color: gainsboro; border: none">
+      <div class="card-block">
+        <span class="col">
+          <div class="card-thumb" style="background-color: white">
+            <div class="card-header">
+              Full Cover Headphones
+            </div>
+            <div class="card-body text-center">
+              <a class="navbar-brand pull-left" href='/special/{"ref":"Music","category":"headphone"}'>
+                <img class="mw-100 mh-100" src="/images/headphones-1.jpeg">
+              </a>
+              <p>new technology</p>
+            </div>
+            <div class="card-footer text-left">
+              <a href='/special/{"ref":"Music","category":"headphone"}' class="card-text">more learn</a>
+            </div>
+          </div>
+        </span>
+      </div>
+    </div>
+  </div>
